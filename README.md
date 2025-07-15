@@ -58,13 +58,6 @@ cd dynamic-chat
 
 ### 3️⃣ Run the App
 
-* Open `index.html` directly in your browser, **or**
-* Use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer):
-
-```bash
-live-server
-```
-
 ---
 
 ## 🎛️ Customization
@@ -99,7 +92,7 @@ live-server
 
 ## 🙌 Credits
 
-Made with ❤️ by **\[Your Name]**
+Made with ❤️ by **\DYNAMICAK**
 Inspired by modern UI/UX design trends & open-source community ideas.
 
 ---
