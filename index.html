@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dynamic-Chat</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <!-- BG Combo Picker -->
+  <div id="bgComboPicker" style="text-align: center; margin-bottom: 1rem;">
+    <label for="bgComboSelect"><strong>Background Theme:</strong></label>
+    <select id="bgComboSelect">
+      <option value="0">Bold & Clean 🩷</option>
+      <option value="1">Nature Calm 🌿</option>
+      <option value="2">Funky Modern 🪩</option>
+      <option value="3">Frosty Minimal 🧊</option>
+      <option value="4">Retro Pop 🎨</option>
+    </select>
+  </div>
+
+  <div id="chatBox">
+    <h2>🟢LIVE Chat</h2>
+    <button id="themeToggle" title="Toggle dark/light mode">🌙</button>
+    <div id="messages"></div>
+    <input type="text" id="name" placeholder="Your name">
+    <div id="emojiPicker"></div>
+    <textarea id="message" placeholder="Type a message..."></textarea>
+    <button id="sendBtn">Send</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

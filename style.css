@@ -1,0 +1,258 @@
+:root {
+  --bg: #f2f2f2;
+  --chat-bg: #fff;
+  --text: #222;
+  --msg-bg: #fbe6ff;
+  --input-bg: #fff;
+  --border: #ccc;
+  --button-bg: #1890ff;
+  --button-hover: #1677cc;
+  --emoji-hover: #e6f7ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181a20;
+    --chat-bg: #23262f;
+    --text: #f5f6fa;
+    --msg-bg: #253046;
+    --input-bg: #23262f;
+    --border: #33384d;
+    --button-bg: #3a7cff;
+    --button-hover: #2553b8;
+    --emoji-hover: #253046;
+  }
+}
+
+/* Manual theme override */
+body.dark, #chatBox.dark {
+  --bg: #181a20;
+  --chat-bg: #23262f;
+  --text: #f5f6fa;
+  --msg-bg: #253046;
+  --input-bg: #23262f;
+  --border: #33384d;
+  --button-bg: #3a7cff;
+  --button-hover: #2553b8;
+  --emoji-hover: #253046;
+}
+body.light, #chatBox.light {
+  --bg: #f2f2f2;
+  --chat-bg: #fff;
+  --text: #222;
+  --msg-bg: #e6f7ff;
+  --input-bg: #fff;
+  --border: #ccc;
+  --button-bg: #1890ff;
+  --button-hover: #1677cc;
+  --emoji-hover: #e6f7ff;
+}
+
+/* ANIMATED BLENDED BACKGROUND */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #a259ff 0%, #ffd700 100%);
+  color: var(--text);
+  padding: 1.25rem;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated, blurred, layered blobs! */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 60% 5%, #b97fffbb 0 22%, transparent 65%),
+    radial-gradient(circle at 20% 80%, #ffdf70bb 0 25%, transparent 70%),
+    radial-gradient(circle at 90% 90%, #ff99facc 0 21%, transparent 60%);
+  opacity: 0.8;
+  filter: blur(46px);
+  animation: bgblobs 15s ease-in-out infinite alternate;
+}
+body.dark::before, #chatBox.dark::before {
+  background:
+    radial-gradient(circle at 60% 5%, #7547a799 0 22%, transparent 70%),
+    radial-gradient(circle at 20% 80%, #ffd70099 0 25%, transparent 70%),
+    radial-gradient(circle at 90% 90%, #a259ffaa 0 18%, transparent 70%);
+  opacity: 0.65;
+}
+@keyframes bgblobs {
+  0% {
+    background-position: 60% 5%, 20% 80%, 90% 90%;
+  }
+  100% {
+    background-position: 50% 40%, 80% 90%, 10% 80%;
+  }
+}
+
+/* BG Combo Gradients - will be toggled by JS */
+body.bg-combo-0 { background: linear-gradient(135deg, #1A1A1D 0%, #C3073F 100%); }
+body.bg-combo-1 { background: linear-gradient(120deg, #2E8B57 0%, #F0F8FF 100%); }
+body.bg-combo-2 { background: linear-gradient(110deg, #0F4C81 0%, #F9A03F 100%); }
+body.bg-combo-3 { background: linear-gradient(100deg, #222831 0%, #EEEEEE 100%); }
+body.bg-combo-4 { background: linear-gradient(120deg, #FF6F61 0%, #6B5B95 100%); }
+
+body {
+  transition: background 0.6s cubic-bezier(.4,2,.3,1), color 0.3s;
+}
+
+/* Chat Box and UI */
+
+#chatBox {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--chat-bg);
+  color: var(--text);
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--text);
+  transition: color 0.3s;
+}
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  padding: 0.625rem;
+  margin-bottom: 0.5rem;
+  background: var(--input-bg);
+  transition: background 0.3s, border 0.3s;
+}
+.msg {
+  margin: 0.3125rem 0;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 5px;
+  background: var(--msg-bg);
+  position: relative;
+  word-break: break-word;
+  transition: background 0.3s;
+}
+.name {
+  font-weight: bold;
+  margin-right: 0.3125rem;
+}
+.timestamp {
+  display: block;
+  font-size: 0.75em;
+  color: #666;
+  margin-top: 0.125rem;
+}
+.deleteBtn {
+  position: absolute;
+  right: 0.3125rem;
+  top: 0.3125rem;
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+#name, #message, #sendBtn {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+#name {
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+textarea#message {
+  padding: 0.5rem 0.5rem;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 120px;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+#sendBtn {
+  padding: 0.625rem;
+  margin-top: 0;
+  border: none;
+  border-radius: 4px;
+  background: var(--button-bg);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#sendBtn:hover {
+  background: var(--button-hover);
+}
+
+/* Emoji picker styles */
+#emojiPicker {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  user-select: none;
+}
+.emojiBtn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0.125rem;
+  transition: transform 0.1s, background 0.3s;
+  border-radius: 4px;
+  color: var(--text);
+}
+.emojiBtn:hover {
+  background: var(--emoji-hover);
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  #chatBox {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  #messages {
+    height: 250px;
+  }
+  #sendBtn {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+  #name, textarea#message {
+    font-size: 1.1rem;
+  }
+  .emojiBtn {
+    font-size: 1.75rem;
+    margin: 0.25rem;
+  }
+}
