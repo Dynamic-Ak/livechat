@@ -92,7 +92,7 @@ cd dynamic-chat
 
 ## 🙌 Credits
 
-Made with ❤️ by **\DYNAMICAK**
+Made with ❤️ by **DYNAMICAK**
 Inspired by modern UI/UX design trends & open-source community ideas.
 
 ---
