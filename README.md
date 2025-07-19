@@ -20,7 +20,7 @@ Built using **HTML, CSS, JavaScript, and Firebase Firestore**.
 
 ---
 
-## 🚀 Demo
+## 🚀 Demo https://dynamic-ak.github.io/livechat/
 
 > _To run locally, follow the instructions below!_
 
