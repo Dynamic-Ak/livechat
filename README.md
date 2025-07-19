@@ -5,7 +5,8 @@
 
 A modern **realtime chat web app** featuring animated backgrounds, light/dark modes, emoji picker, and theme combos.  
 Built using **HTML, CSS, JavaScript, and Firebase Firestore**.
-
+## 🚀 Demo
+### 🔗 [Live Project – Dynamic Chat](https://dynamic-ak.github.io/livechat)
 ---
 
 ## ✨ Features
@@ -19,9 +20,6 @@ Built using **HTML, CSS, JavaScript, and Firebase Firestore**.
 - 🧑‍🎨 **Username Color Tagging** — Each user gets a unique name color.
 
 ---
-
-## 🚀 Demo
-### 🔗 [Live Project – Dynamic Chat](https://dynamic-ak.github.io/livechat)
 
 
 > _To run locally, follow the instructions below!_
