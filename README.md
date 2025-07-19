@@ -1,14 +1,13 @@
 
-
-```markdown
 # 🟢 Live Chat App
 
 A modern **realtime chat web app** featuring animated backgrounds, light/dark modes, emoji picker, and theme combos.  
 Built using **HTML, CSS, JavaScript, and Firebase Firestore**.
-## 🚀 Demo
-🔗 [Live Project – Dynamic Chat](https://dynamic-ak.github.io/livechat)
----
 
+## 🚀 Demo  
+🔗 [Live Project – Dynamic Chat](https://dynamic-ak.github.io/livechat)
+
+---
 ## ✨ Features
 
 - ⚡ **Live Realtime Chat** — Instant message sync using Firebase Firestore.
